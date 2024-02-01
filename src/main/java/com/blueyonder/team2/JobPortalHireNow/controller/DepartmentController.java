@@ -1,6 +1,6 @@
 package com.blueyonder.team2.JobPortalHireNow.controller;
 
-import com.blueyonder.team2.JobPortalHireNow.model.Department;
+import com.blueyonder.team2.JobPortalHireNow.model.master.Department;
 import com.blueyonder.team2.JobPortalHireNow.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,12 +16,17 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
-    @PostMapping
-    public Department createDepartment(@RequestBody Department department) {
-        return departmentService.createDepartment(department);
-    }
+//    @PostMapping
+//    public Department createDepartment(@RequestBody Department department, Model model) {
+//        return departmentService.createDepartment(department);
+//    }
 
-    // Get all users
+    @PostMapping
+    public String addDepartment(@ModelAttribute("department") Department department, Model model){
+        departmentService.createDepartment(department);
+        return "redirect:/departments";
+    }
+//     Get all users
 //    @GetMapping
 //    public List<Department> getAllDepartment() {
 //        return departmentService.getAllDepartment();
@@ -35,9 +40,17 @@ public class DepartmentController {
     }
 
     // Get user by ID
+//    @GetMapping("/{deptId}")
+//    public Optional<Department> getDepartmentById(@PathVariable Long deptId) {
+//        return departmentService.getDepartmentById(deptId);
+//    }
+
     @GetMapping("/{deptId}")
-    public Optional<Department> getDepartmentById(@PathVariable Long deptId) {
-        return departmentService.getDepartmentById(deptId);
+    public String getDepartment(@PathVariable Long deptId, Model model){
+        Optional<Department> department = departmentService.getDepartmentById(deptId);
+        if(department.isEmpty()) return "error";
+        model.addAttribute("department", department);
+        return "department";
     }
 
     // Update user by ID

@@ -1,9 +1,7 @@
 package com.blueyonder.team2.JobPortalHireNow.service;
 
-import com.blueyonder.team2.JobPortalHireNow.model.Department;
+import com.blueyonder.team2.JobPortalHireNow.model.master.Department;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class DepartmentServiceTest {
 

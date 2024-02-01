@@ -1,11 +1,7 @@
 package com.blueyonder.team2.JobPortalHireNow;
 
-import com.blueyonder.team2.JobPortalHireNow.model.Employee;
-import com.blueyonder.team2.JobPortalHireNow.model.Product;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @SpringBootApplication
 public class JobPortalHireNowApplication {

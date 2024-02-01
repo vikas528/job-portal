@@ -1,6 +1,6 @@
 package com.blueyonder.team2.JobPortalHireNow.service;
 
-import com.blueyonder.team2.JobPortalHireNow.model.Department;
+import com.blueyonder.team2.JobPortalHireNow.model.master.Department;
 import com.blueyonder.team2.JobPortalHireNow.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +14,8 @@ public class DepartmentService {
     private DepartmentRepository departmentRepository;
 
 
-    public Department createDepartment(Department department){
-        return departmentRepository.save(department);
+    public void createDepartment(Department department){
+        departmentRepository.save(department);
     }
     public List<Department> getAllDepartment(){
         return departmentRepository.findAll();
