@@ -1,7 +1,6 @@
 package com.blueyonder.team2.JobPortalHireNow.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -11,8 +10,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes(names = "name")
 public class WelcomeController {
     @GetMapping
-    public String showWelcomePage(Model model){
-        model.addAttribute("name", "vikas");
+    public String getWelcome(){
         return "welcome";
     }
 }

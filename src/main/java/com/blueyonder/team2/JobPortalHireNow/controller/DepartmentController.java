@@ -2,6 +2,7 @@ package com.blueyonder.team2.JobPortalHireNow.controller;
 
 import com.blueyonder.team2.JobPortalHireNow.model.master.Department;
 import com.blueyonder.team2.JobPortalHireNow.service.DepartmentService;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,10 +11,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@AllArgsConstructor
 @Controller
 @RequestMapping("/departments")
 public class DepartmentController {
-    @Autowired
     private DepartmentService departmentService;
 
 //    @PostMapping
@@ -33,7 +34,7 @@ public class DepartmentController {
 //    }
 
     @GetMapping
-    public String showAllDepartment(Model model){
+    public String getAllDepartment(Model model){
         List<Department> departments = departmentService.getAllDepartment();
         model.addAttribute("departments", departments);
         return "department_list";
