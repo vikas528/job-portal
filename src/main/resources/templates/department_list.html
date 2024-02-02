@@ -6,19 +6,19 @@
 </head>
 <body>
   <h1>Department List</h1>
-  <table>
+  <table th:border="1">
     <thead>
       <tr>
         <th>Department ID</th>
         <th>Department Name</th>
       </tr>
     </thead>
-  </table>
   <tbody>
     <tr th:each="department : ${departments}">
       <td th:text="${department.deptId}"></td>
       <td th:text="${department.deptName}"></td>
     </tr>
   </tbody>
+  </table>
 </body>
 </html>

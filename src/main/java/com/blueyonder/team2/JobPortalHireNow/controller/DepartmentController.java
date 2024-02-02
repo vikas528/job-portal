@@ -47,10 +47,10 @@ public class DepartmentController {
 
     @GetMapping("/{deptId}")
     public String getDepartment(@PathVariable Long deptId, Model model){
-        Optional<Department> department = departmentService.getDepartmentById(deptId);
-        if(department.isEmpty()) return "error";
-        model.addAttribute("department", department);
-        return "department";
+//        Optional<Department> department = departmentService.getDepartmentById(deptId);
+//        if(department.isEmpty()) return "error";
+//        model.addAttribute("departments", department);
+        return "department_list";
     }
 
     // Update user by ID
@@ -61,14 +61,15 @@ public class DepartmentController {
 
     // Delete all users
     @DeleteMapping
-    public String deleteAllDepartment() {
+    public String deleteAllDepartment(Model model) {
         departmentService.deleteAllDepartment();
         return "All users have been deleted successfully.";
     }
 
     // Delete user by ID
     @DeleteMapping("/{deptId}")
-    public void deleteUser(@PathVariable Long deptId) {
+    public String deleteUser(@PathVariable Long deptId) {
         departmentService.deleteDepartment(deptId);
+        return "account";
     }
 }

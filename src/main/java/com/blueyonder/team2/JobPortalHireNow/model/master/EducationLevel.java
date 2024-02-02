@@ -15,7 +15,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "regions")
+@Table(name = "education_levels")
 public class EducationLevel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
