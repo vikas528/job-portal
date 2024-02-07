@@ -2,25 +2,25 @@
 
 <beans>
     <bean id="1" class="com.blueyonder.team2.JobPortalHireNow.model.Employee">
-        <property name="employeeId" value="15"></property>
-        <property name="employeeName" value="Tom Cruise"></property>
-        <property name="dateOfBirth" value="04/04/1982"></property>
-        <property name="salary" value="500000.00"></property>
-        <property name="address" ref="2"></property>
+        <property name="employeeId" value="15"/>
+        <property name="employeeName" value="Tom Cruise"/>
+        <property name="dateOfBirth" value="04/04/1982"/>
+        <property name="salary" value="500000.00"/>
+        <property name="address" ref="2"/>
     </bean>
     <bean id="2" class="com.blueyonder.team2.JobPortalHireNow.model.Address">
-        <property name="landmark" value="IT Park"></property>
-        <property name="street" value="Madhapur"></property>
-        <property name="city" value="Hyderabad"></property>
-        <property name="state" value="Telangana"></property>
-        <property name="country" ref="India"></property>
+        <property name="landmark" value="IT Park"/>
+        <property name="street" value="Madhapur"/>
+        <property name="city" value="Hyderabad"/>
+        <property name="state" value="Telangana"/>
+        <property name="country" ref="India"/>
     </bean>
 
     <bean id="3" class="com.blueyonder.team2.JobPortalHireNow.model.Product">
-        <property name="productId" value="123"></property>
-        <property name="productName" value="Laptop"></property>
-        <property name="productPrice" value="45000.00"></property>
-        <property name="quantityOnHand" value="3"></property>
-        <property name="productCost" ref="135000.00"></property>
+        <property name="productId" value="123"/>
+        <property name="productName" value="Laptop"/>
+        <property name="productPrice" value="45000.00"/>
+        <property name="quantityOnHand" value="3"/>
+        <property name="productCost" ref="135000.00"/>
     </bean>
 </beans>
